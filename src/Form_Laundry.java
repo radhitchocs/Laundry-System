@@ -56,7 +56,8 @@ public class Form_Laundry extends javax.swing.JFrame {
                 String Berat = hasil.getString("berat");
                 String TotalHarga = hasil.getString("total_harga");
                 String Bayar = hasil.getString("bayar");
-                String[] DataLaundry = {FieldId,namaPembeli, JenisCuci, Harga, Berat, TotalHarga, Bayar};
+                String Kembalian = hasil.getString("kembalian");
+                String[] DataLaundry = {FieldId,namaPembeli, JenisCuci, Harga, Berat, TotalHarga, Bayar,Kembalian};
                 tabmodel.addRow(DataLaundry);
             }
         } catch (SQLException e) {
@@ -255,7 +256,7 @@ public class Form_Laundry extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_beratKeyReleased
 
     private void btn_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_transaksiActionPerformed
-        String url = "insert into data_laundry values (?,?,?,?,?,?,?,?)";
+        String url = "insert into data_laundry values (?,?,?,?,?,?,?,?,?)";
         if (txt_harga.getText().isEmpty() || txt_namaPembeli.getText().isEmpty() || txt_berat.getText().isEmpty() || txt_ttlHarga.getText().isEmpty() || txt_bayar.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Isi terlebih dahulu semua kolom");
         } else {
