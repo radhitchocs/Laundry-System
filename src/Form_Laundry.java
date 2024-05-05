@@ -10,6 +10,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
+
 public class Form_Laundry extends javax.swing.JFrame {
 
     public Form_Laundry() {
@@ -74,6 +76,7 @@ public class Form_Laundry extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -95,6 +98,7 @@ public class Form_Laundry extends javax.swing.JFrame {
         btn_update = new javax.swing.JButton();
         txt_namaPembeli = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        btn_cetak = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -127,6 +131,11 @@ public class Form_Laundry extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel5.setText("Berat/Kg");
+        jLabel5.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jLabel5PropertyChange(evt);
+            }
+        });
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 130, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -163,7 +172,7 @@ public class Form_Laundry extends javax.swing.JFrame {
                 btn_batalActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, 140, 50));
+        jPanel1.add(btn_batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 140, 50));
 
         btn_transaksi.setText("Transaksi");
         btn_transaksi.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +180,7 @@ public class Form_Laundry extends javax.swing.JFrame {
                 btn_transaksiActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, 140, 50));
+        jPanel1.add(btn_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 140, 50));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel7.setText("Nama Pembeli");
@@ -200,7 +209,7 @@ public class Form_Laundry extends javax.swing.JFrame {
                 btn_hapusActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 140, 50));
+        jPanel1.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 640, 140, 50));
 
         btn_update.setText("Update");
         btn_update.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +217,7 @@ public class Form_Laundry extends javax.swing.JFrame {
                 btn_updateActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, 140, 50));
+        jPanel1.add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 640, 140, 50));
 
         txt_namaPembeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,6 +230,14 @@ public class Form_Laundry extends javax.swing.JFrame {
         jLabel8.setText("Jenis Cuci");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 130, 50));
 
+        btn_cetak.setText("Cetak Kwitansi");
+        btn_cetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cetakActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 640, 140, 50));
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1200, 810);
 
@@ -232,6 +249,8 @@ public class Form_Laundry extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_hargaActionPerformed
 
+    
+    
     private void combo_jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_jenisActionPerformed
         if (combo_jenis.getSelectedItem().equals("Pilih Jenis")) {
             txt_harga.setText("0");
@@ -256,7 +275,7 @@ public class Form_Laundry extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_beratKeyReleased
 
     private void btn_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_transaksiActionPerformed
-        String url = "insert into data_laundry values (?,?,?,?,?,?,?,?,?)";
+        String url = "insert into data_laundry values (?,?,?,?,?,?,?,?)";
         if (txt_harga.getText().isEmpty() || txt_namaPembeli.getText().isEmpty() || txt_berat.getText().isEmpty() || txt_ttlHarga.getText().isEmpty() || txt_bayar.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Isi terlebih dahulu semua kolom");
         } else {
@@ -347,6 +366,14 @@ public class Form_Laundry extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_namaPembeliActionPerformed
 
+    private void btn_cetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cetakActionPerformed
+        
+    }//GEN-LAST:event_btn_cetakActionPerformed
+
+    private void jLabel5PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel5PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5PropertyChange
+
     /**
      * @param args the command line arguments
      */
@@ -385,6 +412,7 @@ public class Form_Laundry extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_batal;
+    private javax.swing.JButton btn_cetak;
     private javax.swing.JButton btn_hapus;
     private javax.swing.JButton btn_transaksi;
     private javax.swing.JButton btn_update;
@@ -398,6 +426,7 @@ public class Form_Laundry extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabel_data;
     private javax.swing.JTextField txt_bayar;
