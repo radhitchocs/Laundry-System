@@ -36,7 +36,7 @@ public class Form_Laundry extends javax.swing.JFrame {
     }
 
     public void Tampilkan_Data() {
-        String[] Data = {"ID Transaksi","Pembeli","Jenis Cuci", "Harga/Kilo", "Berat", "Total Harga", "Bayar"};
+        String[] Data = {"ID Transaksi","Pembeli","Jenis Cuci", "Harga/Kilo", "Berat", "Total Harga", "Bayar","Kembalian"};
         tabmodel = new DefaultTableModel(null, Data);
         tabel_data.setModel(tabmodel);
             for (int i = 0; i < tabel_data.getColumnCount(); i++) {
